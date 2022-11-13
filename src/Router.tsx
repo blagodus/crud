@@ -6,11 +6,13 @@ import {
 } from 'react-router-dom'
 import App from './App'
 import RouteSuspense from './components/RputeSuspense'
+import {delay} from './utils'
 
 // Pages
-const Posts = React.lazy(() => import('./pages/Posts'))
+const Posts = React.lazy(() => delay(2000).then(() => import('./pages/Posts')))
 const NewPost = React.lazy(() => import('./pages/NewPost'))
 const PostDetails = React.lazy(() => import('./pages/PostDetails'))
+const NotFound = React.lazy(() => import('./pages/NotFound'))
 
 const Router = () => (
     <BrowserRouter>
@@ -29,6 +31,11 @@ const Router = () => (
                 <Route path="details/:postId" element={
                     <RouteSuspense>
                         <PostDetails />
+                    </RouteSuspense>
+                } />
+                <Route path="*" element={
+                    <RouteSuspense>
+                        <NotFound />
                     </RouteSuspense>
                 } />
             </Route>
