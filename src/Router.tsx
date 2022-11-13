@@ -5,17 +5,32 @@ import {
     Route,
 } from 'react-router-dom'
 import App from './App'
-import Posts from './pages/Posts'
-import NewPost from './pages/NewPost'
-import PostDetails from './pages/PostDetails'
+import RouteSuspense from './components/RputeSuspense'
+
+// Pages
+const Posts = React.lazy(() => import('./pages/Posts'))
+const NewPost = React.lazy(() => import('./pages/NewPost'))
+const PostDetails = React.lazy(() => import('./pages/PostDetails'))
 
 const Router = () => (
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />}>
-                <Route index element={<Posts />} />
-                <Route path="new" element={<NewPost />} />
-                <Route path="details/:postId" element={<PostDetails />} />
+                <Route index element={
+                    <RouteSuspense>
+                        <Posts />
+                    </RouteSuspense>
+                } />
+                <Route path="new" element={
+                    <RouteSuspense>
+                        <NewPost />
+                    </RouteSuspense>
+                } />
+                <Route path="details/:postId" element={
+                    <RouteSuspense>
+                        <PostDetails />
+                    </RouteSuspense>
+                } />
             </Route>
         </Routes>
     </BrowserRouter>
