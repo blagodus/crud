@@ -9,7 +9,7 @@ import RouteSuspense from './components/RputeSuspense'
 import {delay} from './utils'
 
 // Pages
-const Posts = React.lazy(() => delay(2000).then(() => import('./pages/Posts')))
+const Posts = React.lazy(() => delay(500).then(() => import('./pages/Posts')))
 const NewPost = React.lazy(() => import('./pages/NewPost'))
 const PostDetails = React.lazy(() => import('./pages/PostDetails'))
 const NotFound = React.lazy(() => import('./pages/NotFound'))
