@@ -57,11 +57,9 @@ const Posts = () => {
                                     </Typography>
                                 }
                                 secondary={
-                                    <React.Fragment>
-                                        <Typography variant="body1">
-                                            {post.body}
-                                        </Typography>
-                                    </React.Fragment>
+                                    <Typography variant="body1">
+                                        {post.body}
+                                    </Typography>
                                 }
                             />
                         </ListItem>
@@ -74,3 +72,4 @@ const Posts = () => {
 }
 
 export default Posts
+

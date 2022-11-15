@@ -25,3 +25,4 @@ const FormInput = ({ name, ...otherProps }: FormInputProps) => {
 }
 
 export default FormInput
+

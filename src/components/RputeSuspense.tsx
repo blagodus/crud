@@ -12,3 +12,4 @@ const RouteSuspense = ({loading, children}: RouteSuspenseProps) => (
 )
 
 export default RouteSuspense
+

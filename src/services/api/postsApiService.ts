@@ -32,3 +32,4 @@ export const editPost = async (id: string, post: Post) => {
 export const deletePost = async (id: string) => {
     return postsApiClient.delete(`/posts/${id}`)
 }
+

@@ -16,3 +16,4 @@ const Loader = ({size = 108, thickness = 3.6, ...restOfProps}: CircularProgressP
 )
 
 export default Loader
+

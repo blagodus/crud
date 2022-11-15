@@ -8,3 +8,4 @@ export type Post = {
 }
 
 export type PostsList = Post[]
+
